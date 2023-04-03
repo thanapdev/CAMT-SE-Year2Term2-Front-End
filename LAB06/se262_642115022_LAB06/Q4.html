@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life in weeks</title>
+  </head>
+  <body>
+    <script>
+      // write your code here
+      function lifeInWeeks(age) {
+        var ageRemaining = 90 - age;
+        var days = ageRemaining * 365;
+        var weeks = ageRemaining * 52;
+        var months = ageRemaining * 12;
+
+       alert(
+          "You have " +
+            days +
+            " days, " +
+            weeks +
+            " weeks and " +
+            months +
+            " months left."
+        );
+
+        /*************Don't change the code below**********/
+      }
+      lifeInWeeks((age = prompt("How old are you?")));
+    </script>
+  </body>
+</html>
