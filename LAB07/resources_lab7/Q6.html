@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Game of Chase</title>
+    <style>
+      #circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Write your code here. -->
+    <div id="circle"></div>
+
+    <!-- script -->
+    <script>
+      //
+      const circle = document.getElementById("circle");
+
+      let hoverTimeout;
+
+      circle.addEventListener("mouseover", () => {
+        hoverTimeout = setTimeout(() => {
+          moveCircle();
+        }, 1000);
+      });
+
+      circle.addEventListener("mouseout", () => {
+        clearTimeout(hoverTimeout);
+      });
+
+      circle.addEventListener("click", () => {
+        changeColor();
+      });
+
+      function moveCircle() {
+        const x = Math.floor(Math.random() * (window.innerWidth - 50));
+        const y = Math.floor(Math.random() * (window.innerHeight - 50));
+
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+      }
+
+      function changeColor() {
+        const colors = ["blue", "red", "green", "purple"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        circle.style.backgroundColor = randomColor;
+      }
+    </script>
+  </body>
+</html>

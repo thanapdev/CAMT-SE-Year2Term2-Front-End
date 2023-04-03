@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainbow</title>
+  </head>
+  <body>
+    <!-- Write your code here. -->
+    <button id="red">RED</button>
+    <button id="orange">ORANGE</button>
+    <button id="yellow">YELLOW</button>
+    <button id="green">GREEN</button>
+    <button id="blue">BLUE</button>
+    <button id="purple">PURPLE</button>
+    <!-- js -->
+    
+    <script>
+      const redButton = document.getElementById("red");
+      redButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "red";
+      });
+      const orangeButton = document.getElementById("orange");
+      orangeButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "orange";
+      });
+      const yellowButton = document.getElementById("yellow");
+      yellowButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "yellow";
+      });
+      const greenButton = document.getElementById("green");
+      greenButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "green";
+      });
+      const blueButton = document.getElementById("blue");
+      blueButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "blue";
+      });
+      const purpleButton = document.getElementById("purple");
+      purpleButton.addEventListener("click", function () {
+        document.body.style.backgroundColor = "purple";
+      });
+
+      document.addEventListener("click", function (event) {
+        if (event.target.matches("button")) {
+          document.body.style.backgroundColor =
+            event.target.textContent.toLowerCase();
+        }
+      });
+    </script>
+  </body>
+</html>

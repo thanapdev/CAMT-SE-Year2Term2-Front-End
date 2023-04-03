@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector constructor</title>
+  </head>
+  <body>
+    <script>
+      // Your code here.
+      function Vec(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+
+      Vec.prototype.plus = function (other) {
+        return new Vec(this.x + other.x, this.y + other.y);
+      };
+
+      Vec.prototype.minus = function (other) {
+        return new Vec(this.x - other.x, this.y - other.y);
+      };
+
+      Vec.prototype.length = function () {
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+      };
+
+
+      console.log(new Vec(1, 2).plus(new Vec(5, 3)));
+      // → Vec{x: 3, y: 5}
+
+      console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+      // → Vec{x: -1, y: -1}
+
+      console.log(new Vec(6, 8).length());
+      // → 5
+    </script>
+  </body>
+</html>
